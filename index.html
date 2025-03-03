@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-    <title>My weather application</title>
+    <title>Weather.exe</title>
   </head>
   <body>
     <div class="weather-app">
@@ -16,29 +16,29 @@
             <input
               type="search"
               id="city-input"
-              placeholder="Enter a city.."
+              placeholder="Enter a location..."
               required
             />
             <input type="submit" value="Search" />
           </form>
         </header>
-
         <main>
-          <div class="current-weather">
-            <div>
-              <h1 id="city-name"></h1>
-              <p id="date-time">
-                Saturday 15:32, moderate rain<br />
-                Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
-              </p>
+            <div class="current-weather">
+              <div class="weather-details">
+                <h1 id="city-name"></h1>
+                <p id="date-time">
+                  
+        Humidity: <strong></strong>, Wind: <strong></strong>
+                </p>
+              </div>
+              <div class="current-temp">
+                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" class="current-temp-icon" alt="Weather Icon">
+                <span class="current-temp-value" id="current-temp"></span>
+                <span class="current-temp-unit">°C</span>
+                <span class="weather-condition-text" id="weather-condition-text">clear</span>
+              </div>
             </div>
-            <div class="current-temp">
-              <span class="current-temp-icon">☀️</span>
-              <span class="current-temp-value" id="current-temp">14</span>
-              <span class="current-temp-unit">°C</span>
-            </div>
-          </div>
-        </main>
+          </main>
 
         <footer>
             <p>

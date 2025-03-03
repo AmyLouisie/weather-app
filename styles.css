@@ -1,71 +1,107 @@
 body {
-    background-color: #f7cdda;
-    font-family: sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+  background: url("https://i.pinimg.com/736x/a7/df/70/a7df70069a27956088556ad4833f8e03.jpg") no-repeat center center fixed;
+  background-size: 100% 100%;
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
-  
-  .weather-app {
-    width: 518px;
-    height: 414px;
-    position: relative;
-    background: url("https://i.imgur.com/2flfmLh.png") no-repeat center center;
-    background-size: cover;
-  }
-  
-  .content {
-    position: absolute;
-    top: 50px;
-    left: 120px;
-    right: 120px;
-    bottom: 30px;
-    overflow: auto;
-  }
-  
-  header form {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  header input[type="search"] {
-    padding: 8px;
-    font-size: 16px;
-    width: 180px;
-  }
-  
-  header input[type="submit"] {
-    padding: 10px 16px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .current-weather {
-    font-family: "Courier New";
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .current-weather h1 {
-    margin-bottom: 5px;
-  }
-  
-  footer {
-    text-align: center;
-    font-size: 14px;
-  }
-  
-  footer p {
-    line-height: 1.4;
-  }
-  
-  footer a {
-    text-decoration: underline;
-    color: #ffb5b5;
+
+strong {
+ color: #ffb5b5;
+
 }
-  
+
+.weather-app {
+  width: 518px;
+  height: 414px;
+  position: relative;
+  background: url("https://i.imgur.com/2flfmLh.png") no-repeat center center;
+  background-size: cover;
+}
+
+.content {
+  position: absolute;
+  top: 50px;
+  left: 120px;
+  right: 120px;
+  bottom: 30px;
+  overflow: auto;
+}
+
+header form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+header input[type="search"] {
+  padding: 8px;
+  font-size: 16px;
+  width: 180px;
+}
+
+header input[type="submit"] {
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.current-weather {
+  font-family: "Courier New";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.weather-details {
+  flex: 1;
+}
+
+.current-temp {
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.current-temp-icon {
+  width: 60px;  /* Adjust width to a reasonable size */
+  height: 60px; /* Keep it proportional */
+  display: inline-block;
+  margin-right: 8px; /* Adds spacing between icon and temperature */
+  vertical-align: middle; /* Aligns icon with the text */
+}
+
+.weather-condition-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffb5b5;
+  margin-left: 5px;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+}
+
+footer p {
+  line-height: 1.4;
+}
+
+footer a {
+  text-decoration: underline;
+  color: #ffb5b5;
+}
