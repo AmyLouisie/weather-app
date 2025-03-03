@@ -1,5 +1,28 @@
 // Description: Main JavaScript file for the Weather App
 
+document.addEventListener("DOMContentLoaded", function () {
+  hideWeatherInfo(); // Hide all weather details on page load
+});
+
+function hideWeatherInfo() {
+  document.querySelector(".current-weather").style.display = "none";
+  document.querySelector(".weather-forecast").style.display = "none";
+}
+
+function clearWeatherData() {
+  document.querySelector("#city-name").innerHTML = "";
+  document.querySelector("#current-temp").innerHTML = "";
+  document.querySelector("#weather-condition-text").innerHTML = "";
+  document.querySelector("#date-time").innerHTML = "";
+  document.querySelector("#forecast-container").innerHTML = "";
+  document.querySelector(".current-temp-icon").src = "";
+}
+
+function showWeatherInfo() {
+  document.querySelector(".current-weather").style.display = "flex";
+  document.querySelector(".weather-forecast").style.display = "block";
+}
+
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#city-input");
@@ -13,14 +36,25 @@ function search(event) {
 
     axios.get(apiUrl)
       .then(response => {
+        if (!response.data.city) {
+          alert("City not found. Please check the spelling and try again!");
+          clearWeatherData(); // Clear previous weather data
+          hideWeatherInfo();  // Keep only the search form visible
+          return;
+        }
         displayTemperature(response);
         let lat = response.data.coordinates.latitude;
         let lon = response.data.coordinates.longitude;
-        getLocalTime(lat, lon, response.data); // Fetch local time while keeping weather data
+        getLocalTime(lat, lon, response.data);
+        getForecast(city);
+        showWeatherInfo();
       })
-      .catch(error => console.error("Error fetching weather data:", error));
-
-    getForecast(city); // Fetch the 5-day forecast
+      .catch(error => {
+        console.error("Error fetching weather data:", error);
+        alert("City not found. Please check the spelling and try again!");
+        clearWeatherData();
+        hideWeatherInfo();
+      });
   }
 }
 
@@ -32,8 +66,9 @@ function displayTemperature(response) {
 
   let cityName = response.data.city || "Unknown City";
   if (!cityName) {
-    console.error("City name not found in API response", response);
-    cityElement.innerHTML = "City not found";
+    alert("City not found. Please check the spelling and try again!");
+    clearWeatherData();
+    hideWeatherInfo();
     return;
   }
 
@@ -48,7 +83,6 @@ function displayTemperature(response) {
   weatherIconElement.alt = weatherDescription;
 }
 
-// Fetch local time using latitude & longitude while keeping weather details
 function getLocalTime(lat, lon, weatherData) {
   let apiUrl = `https://api.timezonedb.com/v2.1/get-time-zone?key=ZECGDS9S4KXT&format=json&by=position&lat=${lat}&lng=${lon}`;
 
@@ -74,7 +108,6 @@ function getLocalTime(lat, lon, weatherData) {
     .catch(error => console.error("Error fetching time data:", error));
 }
 
-// Fetch the 5-day forecast data
 function getForecast(city) {
   let apiKey = "d78e7acc0to3ab4c102473f7fd13b43e";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -84,7 +117,6 @@ function getForecast(city) {
     .catch(error => console.error("Error fetching forecast:", error));
 }
 
-// Display the 5-day forecast
 function displayForecast(response) {
   let forecastContainer = document.querySelector("#forecast-container");
   forecastContainer.innerHTML = "";
