@@ -10,51 +10,50 @@
   </head>
   <body>
     <div class="weather-app">
-      <div class="content">
+      <div class="weather-app-header">
+        <span class="weather-app-title">Weather-app.exe</span>
+        <div class="window-controls">
+          <button>-</button>
+          <button>X</button>
+        </div>
+      </div>
+      <div class="weather-app-content">
         <header>
           <form id="search-form">
-            <input
-              type="search"
-              id="city-input"
-              placeholder="Enter a location..."
-              required
-            />
+            <input type="search" id="city-input" placeholder="Enter a location..." required />
             <input type="submit" value="Search" />
           </form>
         </header>
         <main>
-            <div class="current-weather">
-              <div class="weather-details">
-                <h1 id="city-name"></h1>
-                <p id="date-time">
-                  
-        Humidity: <strong></strong>, Wind: <strong></strong>
-                </p>
-              </div>
-              <div class="current-temp">
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" class="current-temp-icon" alt="Weather Icon">
-                <span class="current-temp-value" id="current-temp"></span>
-                <span class="current-temp-unit">°C</span>
-                <span class="weather-condition-text" id="weather-condition-text">clear</span>
-              </div>
+          <div class="current-weather">
+            <div class="weather-details">
+              <h1 id="city-name"></h1>
+              <p id="date-time">Humidity: <strong id="humidity"></strong>, Wind: <strong id="wind-speed"></strong></p>
             </div>
-          </main>
+            <div class="current-temp">
+              <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" class="current-temp-icon" alt="Weather Icon">
+              <span class="current-temp-value" id="current-temp"></span>
+              <span class="current-temp-unit">°C</span>
+              <span class="weather-condition-text" id="weather-condition-text">clear</span>
+            </div>
+          </div>
+
+          <!-- Weather Forecast -->
+          <div class="weather-forecast">
+            <h2>5-Day Forecast</h2>
+            <div class="forecast-container" id="forecast-container"></div>
+          </div>
+        </main>
 
         <footer>
-            <p>
-                This project was coded with ❤️ by
-                <a href="https://github.com/AmyLouisie" target="_blank">Amy Ferrer</a>
-                and is
-                <a href="https://github.com/AmyLouisie/weather-app" target="_blank">
-                  on GitHub</a
-                >
-                and
-                <a
-                  href="https://splendorous-macaron-277c51.netlify.app"
-                  target="_blank"
-                  >hosted on Netlify!</a
-                >
-              </p>
+          <p>
+            This project was coded with ❤️ by
+            <a href="https://github.com/AmyLouisie" target="_blank">Amy Ferrer</a>
+            and is
+            <a href="https://github.com/AmyLouisie/weather-app" target="_blank"> on GitHub</a>
+            and
+            <a href="https://splendorous-macaron-277c51.netlify.app" target="_blank">hosted on Netlify!</a>
+          </p>
         </footer>
       </div>
     </div>
