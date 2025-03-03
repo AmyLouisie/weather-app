@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script defer src="index.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <title>My weather application</title>
+  </head>
+  <body>
+    <div class="weather-app">
+      <div class="content">
+        <header>
+          <form id="search-form">
+            <input
+              type="search"
+              id="city-input"
+              placeholder="Enter a city.."
+              required
+            />
+            <input type="submit" value="Search" />
+          </form>
+        </header>
+
+        <main>
+          <div class="current-weather">
+            <div>
+              <h1 id="city-name"></h1>
+              <p id="date-time">
+                Saturday 15:32, moderate rain<br />
+                Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+              </p>
+            </div>
+            <div class="current-temp">
+              <span class="current-temp-icon">☀️</span>
+              <span class="current-temp-value" id="current-temp">14</span>
+              <span class="current-temp-unit">°C</span>
+            </div>
+          </div>
+        </main>
+
+        <footer>
+          <p>
+            <br />
+            This project was coded by
+            <a
+              href="https://www.shecodes.io/graduates/83801-amy-ferrer"
+              target="_blank"
+              >Amy Ferrer</a
+            >
+            and is
+            <a href="https://github.com/AmyLouisie" target="_blank"
+              >on GitHub</a
+            >
+            and
+            <a href="#" target="_blank">hosted on Netlify</a>.
+          </p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

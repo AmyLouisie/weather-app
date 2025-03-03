@@ -1,0 +1,71 @@
+body {
+    background-color: #f7cdda;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .weather-app {
+    width: 518px;
+    height: 414px;
+    position: relative;
+    background: url("https://i.imgur.com/2flfmLh.png") no-repeat center center;
+    background-size: cover;
+  }
+  
+  .content {
+    position: absolute;
+    top: 50px;
+    left: 120px;
+    right: 120px;
+    bottom: 30px;
+    overflow: auto;
+  }
+  
+  header form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  header input[type="search"] {
+    padding: 8px;
+    font-size: 16px;
+    width: 180px;
+  }
+  
+  header input[type="submit"] {
+    padding: 10px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .current-weather {
+    font-family: "Courier New";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .current-weather h1 {
+    margin-bottom: 5px;
+  }
+  
+  footer {
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  footer p {
+    line-height: 1.4;
+  }
+  
+  footer a {
+    text-decoration: none;
+    color: #333;
+  }
+  
